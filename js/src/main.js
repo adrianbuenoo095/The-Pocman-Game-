@@ -5,7 +5,7 @@ const returnToStartWinButton = document.getElementById("returnToStartWin");
 const returnToStartLoseButton = document.getElementById("returnToStartLose");
 
 const startScreen = document.getElementById("app");
-const rulesModal = document.getElementById("rulesModal");
+const rulesModal = document.getElementById("rules-model");
 const winPage = document.getElementById("winPage");
 const losePage = document.getElementById("losePage");
 
