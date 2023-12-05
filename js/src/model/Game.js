@@ -1,24 +1,22 @@
 class Game {
-    constructor() {
-        this.fish = new Fish();
-        this.startPage = document.getElementById('startPage');
-        this.winPage = document.getElementById('winPage');
-        this.losePage = document.getElementById('losePage');
+    constructor(obstacle, player) {
+        this.obstacle = obstacle;
+        this.player = player
+        this.score = 0;
+        this.gameState = ""
     }
 
-    showRules() {
-
+    startGame() {
     }
 
-    start() {
+    updateScore(points) {
+        this.score += points
     }
 
-    showWinPage() {
+    updateGameState() {
     }
 
-    showLosePage() {
-    }
+    endGame() {
 
-    returnToStart() {
     }
 }

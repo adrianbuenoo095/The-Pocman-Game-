@@ -1,24 +1,26 @@
-class Fish {
-    constructor(speed, health, skill) {
+class Player {
+    constructor(skill) {
         this.speed = 0;
-        this.health = health;
+        this.health = 100;
         this.skill = skill;
+        this.position = { x: 0, y: 0 }
     }
 
-    moveUp() {
-
-    }
-
-    moveDown() {
+    interact(element) {
 
     }
 
-    moveBack() {
+    takeDamage(amount) {
+        this.health -= amount;
     }
 
-    moveForward() {
+    heal(amount) {
+        this.health += Math.min(100, this.health + amount);
     }
 
-    resetPosition() {
+    startOver() {
+        this.position = { x: 0, y: 0 };
+        this.health = 100;
     }
+
 }

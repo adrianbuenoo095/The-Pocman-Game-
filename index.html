@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pocman Game</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <div id="app" class="start-screen hidden">
-        <h1>Welcome to the Fish Game</h1>
+    <div id="splash-screen" class="start-screen hidden">
+        <h1>Welcome to the Pocman Game</h1>
         <button id="start-game">Start Game</button>
-        <button id="showRules">Rules</button>
+        <button id="show-rules">Rules</button>
     </div>
 
-    <div id="game-board" class="game-board-screen hidden">
+    <div id="game-screen" class="game-screen hidden">
         <h2>Game Board</h2>
+        <div class="pla">
+
+        </div>
     </div>
 
     <div id="rules-model">
         <h1>Rules</h1>
         <h1>Game Rules</h1>
-        <button">Close</button>
+        <button id="close-rules">Close</button>
     </div>
 
     <div id="won" class="won-scren hidden">
@@ -30,7 +33,7 @@
             </button>
     </div>
 
-    <div id="lost" class="lost-screen hidden">
+    <div id="game-over-screen" class="lost-screen hidden">
         <h1>Oops! You Lost!</h1>
         <button>Return to Start</button>
     </div>

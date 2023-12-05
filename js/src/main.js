@@ -1,21 +1,18 @@
+const closeRulesButton = document.getElementById("close-rules");
+const splash = document.getElementById("splash-screen");
 const startButton = document.getElementById("start-game");
-const showRulesButton = document.getElementById("showRules");
-const closeRulesButton = document.getElementById("closeRules");
-const returnToStartWinButton = document.getElementById("returnToStartWin");
-const returnToStartLoseButton = document.getElementById("returnToStartLose");
-
-const startScreen = document.getElementById("app");
+const gameBoard = document.getElementById("game-board")
 const rulesModal = document.getElementById("rules-model");
 const winPage = document.getElementById("winPage");
 const losePage = document.getElementById("losePage");
 
 
 window.addEventListener("load", () => {
-    startScreen.classList.remove("hidden");
+    splash.classList.remove("hidden");
 });
 
 startButton.addEventListener("click", () => {
-    startScreen.classList.add("hidden");
+    splash.classList.add("hidden");
 
 });
 
@@ -29,12 +26,14 @@ closeRulesButton.addEventListener("click", () => {
 
 returnToStartWinButton.addEventListener("click", () => {
     winPage.classList.add("hidden");
-    startScreen.classList.remove("hidden");
+    splash.classList.remove("hidden");
 
 });
 
 returnToStartLoseButton.addEventListener("click", () => {
     losePage.classList.add("hidden");
-    startScreen.classList.remove("hidden");
+    splash.classList.remove("hidden");
 
 });
+
+const player = new Player();
