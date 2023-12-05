@@ -8,25 +8,29 @@
 </head>
 
 <body>
-    <div id="app" class="start-screen">
+    <div id="app" class="start-screen hidden">
         <h1>Welcome to the Fish Game</h1>
         <button id="start-game">Start Game</button>
         <button id="showRules">Rules</button>
     </div>
 
-    <div id="rulesModal">
-        <h1>Rules</h1>
-        <button">Close</button>
-            <h1>Game Rules</h1>
+    <div id="game-board" class="hidden">
+        <h2>Game Board</h2>
     </div>
 
-    <div id=" winPage">
+    <div id="rulesModal">
+        <h1>Rules</h1>
+        <h1>Game Rules</h1>
+        <button">Close</button>
+    </div>
+
+    <div id=" winPage hidden">
         <h1>Congratulations! You Win!</h1>
         <button">Return to Start
             </button>
     </div>
 
-    <div id="losePage">
+    <div id="losePage hidden">
         <h1>Oops! You Lost!</h1>
         <button>Return to Start</button>
     </div>
