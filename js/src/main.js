@@ -1,10 +1,11 @@
 const closeRulesButton = document.getElementById("close-rules");
+const showRulesButton = document.getElementById("show-rules");
 const splash = document.getElementById("splash-screen");
 const startButton = document.getElementById("start-game");
-const gameBoard = document.getElementById("game-board")
+const gameBoard = document.getElementById("game-screen")
 const rulesModal = document.getElementById("rules-model");
-const winPage = document.getElementById("winPage");
-const losePage = document.getElementById("losePage");
+const wonScreen = document.getElementById("won-screen");
+const gameOverScreen = document.getElementById("game-over-screen");
 
 
 window.addEventListener("load", () => {
@@ -25,13 +26,13 @@ closeRulesButton.addEventListener("click", () => {
 });
 
 returnToStartWinButton.addEventListener("click", () => {
-    winPage.classList.add("hidden");
+    wonScreen.classList.add("hidden");
     splash.classList.remove("hidden");
 
 });
 
 returnToStartLoseButton.addEventListener("click", () => {
-    losePage.classList.add("hidden");
+    gameOverScreen.classList.add("hidden");
     splash.classList.remove("hidden");
 
 });

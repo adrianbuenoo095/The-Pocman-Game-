@@ -47,6 +47,7 @@ table {
 	border-spacing: 0;
 }
 
+
 .start-screen {
     position: fixed;
     top: 0;
@@ -72,7 +73,7 @@ table {
     display: none;
 }
 
-.game-board{
+.game-screen{
 	display: flex;
     flex-wrap: wrap;
     justify-content: center;
