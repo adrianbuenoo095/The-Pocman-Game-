@@ -1,26 +1,39 @@
 class Player {
-    constructor(skill) {
-        this.speed = 0;
-        this.health = 100;
-        this.skill = skill;
-        this.position = { x: 0, y: 0 }
+    constructor() {
+        this.speed = 10;
+        this.position = { x: 0, y: window.innerHeight / 2 };
+        this.element = null;
     }
 
-    interact(element) {
-
+    render() {
+        const playerElement = document.createElement("div");
+        playerElement.className = "player";
+        document.body.appendChild(playerElement);
+        this.element = playerElement;
     }
 
-    takeDamage(amount) {
-        this.health -= amount;
-    }
+    move(keyCode) {
+        console.log(keyCode);
+        const step = this.speed;
 
-    heal(amount) {
-        this.health += Math.min(100, this.health + amount);
-    }
+        switch (keyCode) {
+            case "ArrowUp":
+                this.position.y -= step;
+                break;
+            case "ArrowDown":
+                this.position.y += step;
+                break;
+            case "ArrowLeft":
+                this.position.x -= step;
+                break;
+            case "ArrowRight":
+                this.position.x += step;
+                break;
+            default:
+                break;
+        }
 
-    startOver() {
-        this.position = { x: 0, y: 0 };
-        this.health = 100;
+        this.element.style.left = this.position.x + "px";
+        this.element.style.top = this.position.y + "px";
     }
-
 }
