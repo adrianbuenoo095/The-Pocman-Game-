@@ -32,7 +32,6 @@ class Game {
     }
 
     gameLoop() {
-        const numObstacles = 50;
         console.log('animate');
         this.player.move();
 
@@ -79,6 +78,4 @@ class Game {
             this.animateId = requestAnimationFrame(() => this.gameLoop());
         }
     }
-
-
 }
