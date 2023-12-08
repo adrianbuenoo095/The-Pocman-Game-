@@ -1,8 +1,8 @@
 class Game {
     constructor() {
-        this.startScreen = document.getElementById('game-intro');
+        this.startScreen = document.getElementById('splash-screen');
         this.gameScreen = document.getElementById('game-screen');
-        this.endScreen = document.getElementById('game-end');
+        this.endScreen = document.getElementById('game-over-screen');
         this.player = null;
         this.obstacles = [];
         this.score = 0;
@@ -11,6 +11,9 @@ class Game {
     }
 
     start() {
+        this.startScreen.style.display = 'none'
+        this.endScreen.style.display = 'none'
+        this.gameScreen.style.display = 'block'
         this.spawnObstacles();
         this.updateScore(0);
         this.updateLives(5);

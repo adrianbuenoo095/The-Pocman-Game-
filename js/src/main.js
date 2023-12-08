@@ -4,14 +4,11 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log("loaded");
     const game = new Game();
     const startGameButton = document.getElementById("start-game");
-    const gameScreen = document.getElementById("game-screen");
     const startGame = document.getElementById("splash-screen");
     startGame.classList.remove("hidden");
 
 
-    startGameButton.addEventListener("click", (event) => {
-        startGame.classList.add("hidden");
-        gameScreen.classList.remove("hidden");
+    startGameButton.addEventListener("click", () => {
         game.start();
     });
 
