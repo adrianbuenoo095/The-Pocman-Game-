@@ -1,6 +1,9 @@
 class Game {
     constructor() {
-        this.player = new Player();
+        this.startScreen = document.getElementById('game-intro');
+        this.gameScreen = document.getElementById('game-screen');
+        this.endScreen = document.getElementById('game-end');
+        this.player = null;
         this.obstacles = [];
         this.score = 0;
         this.lives = 5;
@@ -12,6 +15,7 @@ class Game {
         this.updateScore(0);
         this.updateLives(5);
         this.gameState = "playing";
+        this.player = new Player(this.gameScreen)
         this.gameLoop();
     }
 
@@ -29,7 +33,7 @@ class Game {
         this.player.move()
         this.obstacles.forEach(currentObstacle => {
             currentObstacle.move()
-            game.player.didCollide(currentObstacle)
+            this.player.didCollide(currentObstacle)
         })
         requestAnimationFrame(() => this.gameLoop())
     }
