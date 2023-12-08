@@ -9,20 +9,17 @@ class Game {
         this.lives = 5;
         this.gameState = "playing";
         this.isGameOver = false;
-        this.animateId = null; // Initialize animateId in the constructor
     }
 
     start() {
-        this.startScreen.style.display = 'none';
-        this.endScreen.style.display = 'none';
-        this.gameScreen.style.display = 'block';
+        this.startScreen.style.display = 'none'
+        this.endScreen.style.display = 'none'
+        this.gameScreen.style.display = 'block'
         this.spawnObstacles();
 
         this.gameState = "playing";
-        this.player = new Player(this.gameScreen);
-
-        // Initialize animateId here and call gameLoop
-        this.animateId = requestAnimationFrame(() => this.gameLoop());
+        this.player = new Player(this.gameScreen)
+        this.gameLoop();
     }
 
     spawnObstacles() {
@@ -31,10 +28,11 @@ class Game {
         for (let i = 0; i < numObstacles; i++) {
             this.obstacles.push(new Obstacle(this.gameScreen));
         }
-        console.log(this.obstacles);
+        console.log(this.obstacles)
     }
 
     gameLoop() {
+        const numObstacles = 50;
         console.log('animate');
         this.player.move();
 
@@ -43,6 +41,7 @@ class Game {
             currentObstacle.move();
 
             if (currentObstacle.top + currentObstacle.height < 0) {
+                // Remove obstacle only if it
                 currentObstacle.element.remove();
             } else {
                 if (this.player.didCollide(currentObstacle)) {
@@ -59,7 +58,6 @@ class Game {
                 }
             }
         });
-
 
         this.obstacles = nextObstacles;
 
@@ -81,4 +79,6 @@ class Game {
             this.animateId = requestAnimationFrame(() => this.gameLoop());
         }
     }
+
+
 }
