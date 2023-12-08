@@ -23,7 +23,7 @@ class Game {
         const numObstacles = 50;
 
         for (let i = 0; i < numObstacles; i++) {
-            this.obstacles.push(new Obstacle());
+            this.obstacles.push(new Obstacle(this.gameScreen));
         }
         console.log(this.obstacles)
     }
