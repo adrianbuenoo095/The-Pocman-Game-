@@ -7,7 +7,7 @@ class Game {
         this.gameState = "playing";
     }
 
-    startGame() {
+    start() {
         this.spawnObstacles();
         this.updateScore(0);
         this.updateLives(5);

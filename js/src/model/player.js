@@ -1,25 +1,24 @@
 class Player {
-    constructor() {
+    constructor(gameScreen) {
+        this.gameScreen = gameScreen;
         this.speed = 2;
         this.position = { x: 0, y: window.innerHeight / 2 };
-        this.element = null;
         this.directionX = 0;
         this.directionY = 0;
-    }
-
-    render() {
-        const playerElement = document.createElement("div");
-        playerElement.className = "player";
-        document.body.appendChild(playerElement);
-        this.element = playerElement;
+        this.element = document.createElement("div");
+        this.className = "player";
+        this.gameScreen.appendChild(this.element);
     }
 
     move() {
         this.position.x += this.directionX * this.speed;
         this.position.y += this.directionY * this.speed;
 
-        this.element.style.left = this.position.x + "px";
-        this.element.style.top = this.position.y + "px";
+    }
+
+    updatePosition() {
+        this.element.style.left = `${this.position.x}px`;
+        this.element.style.top = `${this.position.y}px`;
     }
 
     didCollide(obstacle) {

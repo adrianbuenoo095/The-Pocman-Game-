@@ -1,18 +1,20 @@
-const game = new Game();
+function play() {
+    const game = new Game();
+    return game.start();
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log("loaded");
+
     const startGameButton = document.getElementById("start-game");
     const gameScreen = document.getElementById("game-screen");
     const startGame = document.getElementById("splash-screen");
     startGame.classList.remove("hidden");
 
-    game.player.render();
-
     startGameButton.addEventListener("click", (event) => {
         startGame.classList.add("hidden");
         gameScreen.classList.remove("hidden");
-        game.startGame();
+        play();
     });
 
     document.addEventListener("keydown", (event) => {
