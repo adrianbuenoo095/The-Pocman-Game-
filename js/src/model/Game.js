@@ -41,6 +41,7 @@ class Game {
 
             if (currentObstacle.top + currentObstacle.height < 0) {
                 currentObstacle.element.remove();
+                this.score += 10;
             } else {
                 if (this.player.didCollide(currentObstacle)) {
                     console.log('collision');
