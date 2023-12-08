@@ -69,10 +69,6 @@ table {
     margin-top: 20px;
 }
 
-.start-screen.hidden {
-    display: none;
-}
-
 .game-screen {
     top: 0;
     left: 0;
