@@ -7,7 +7,6 @@ class Game {
         this.obstacles = [];
         this.score = 0;
         this.lives = 5;
-        this.gameState = "playing";
         this.isGameOver = false;
     }
 
@@ -23,9 +22,7 @@ class Game {
     }
 
     spawnObstacles() {
-        const numObstacles = 50;
-
-        for (let i = 0; i < numObstacles; i++) {
+        for (let i = 0; i < this.obstacles.length; i++) {
             this.obstacles.push(new Obstacle(this.gameScreen));
         }
         console.log(this.obstacles)
@@ -40,7 +37,6 @@ class Game {
             currentObstacle.move();
 
             if (currentObstacle.top + currentObstacle.height < 0) {
-                // Remove obstacle only if it
                 currentObstacle.element.remove();
             } else {
                 if (this.player.didCollide(currentObstacle)) {
@@ -48,9 +44,6 @@ class Game {
                     this.lives -= 1;
                     if (this.lives <= 0) {
                         this.isGameOver = true;
-                    }
-                    else {
-                        this.score += 10;
                     }
                 } else {
                     nextObstacles.push(currentObstacle);
