@@ -47,7 +47,6 @@ table {
 	border-spacing: 0;
 }
 
-
 .start-screen {
     position: fixed;
     top: 0;
@@ -67,15 +66,6 @@ table {
 
 .start-screen button {
     margin-top: 20px;
-}
-
-.game-screen {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh; 
-    border: 2px solid #000;
-    overflow: hidden;
 }
 
 .hidden{

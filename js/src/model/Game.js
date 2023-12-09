@@ -7,6 +7,11 @@ class Game {
         this.obstacles = [];
         this.score = 0;
         this.lives = 5;
+        this.width = 500;
+        this.height = 500;
+        this.left = 0;
+        this.top = 0;
+
         this.isGameOver = false;
     }
 
@@ -14,6 +19,11 @@ class Game {
         this.startScreen.style.display = 'none'
         this.endScreen.style.display = 'none'
         this.gameScreen.style.display = 'block'
+        this.gameScreen.style.width = `${this.width}px`
+        this.gameScreen.style.height = `${this.height}px`
+        this.gameScreen.style.top = `${this.top}`
+        this.gameScreen.style.left = `${this.left}`
+
         this.spawnObstacles();
 
         this.gameState = "playing";
