@@ -1,12 +1,12 @@
 
-const game = new Game();
 
 window.addEventListener('DOMContentLoaded', () => {
-    console.log("loaded");
-    const startGameButton = document.getElementById("start-game");
     const startGame = document.getElementById("splash-screen");
-    startGame.classList.remove("hidden");
+    const startGameButton = document.getElementById("start-game");
+    const game = new Game();
 
+    console.log("loaded");
+    startGame.classList.remove("hidden");
 
     startGameButton.addEventListener("click", () => {
         game.start();
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     keyUpEvent(game);
 });
 
-function keyUpEvent() {
+function keyUpEvent(game) {
     document.addEventListener("keyup", (event) => {
         switch (event.code) {
             case "ArrowUp":
